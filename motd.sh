@@ -40,13 +40,13 @@ CPU_LOAD=$(top -bn1 | grep "Cpu(s)" | awk '{printf "%.1f", 100 - $8}')
 # الوقت والتاريخ
 DATE=$(date +"%Y/%m/%d - %I:%M:%S %p")
 
-# التشغيل
+# مدة التشغيل
 UPTIME=$(uptime -p | sed 's/up //')
 
 # الحزم
 PACKAGES=$(dpkg --get-selections | wc -l)
 
-# الإنترنت
+# اختبار الإنترنت
 PING=$(ping -c1 8.8.8.8 &>/dev/null && echo "Connected ✅" || echo "No Internet ❌")
 
 echo -e "${YELLOW}───────────────────────────────────────────────────────────────${RESET}"
